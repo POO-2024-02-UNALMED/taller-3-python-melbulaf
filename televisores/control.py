@@ -15,7 +15,11 @@ class Control:
         if self._tv.estado == True:
             if self._tv.canal>1 and self._tv.canal >=120:
                 self._tv.canal -=1
-    
+    def setCanal(self, cl):
+        if self._tv.estado == True:
+            if cl >= 1 and cl <= 120:
+                self._tv.canal = cl
+
     def volumenUp(self):
         if self._tv.estado == True:
             if self._tv.volumen >=0 and self._tv.volumen<7:
@@ -24,7 +28,11 @@ class Control:
         if self._tv.estado == True:
             if self._tv.volumen>0 and self._tv.volumen<=7:
                 self._tv.volumen -=1
-    
+    def setVolumen(self, vol):
+        if self._tv.estado == True:
+            if vol >= 0 and vol <= 7:
+                self._tv.volumen = vol
+
     def enlazar(self, Tv):
         self._tv = Tv
         self._tv.control = self
